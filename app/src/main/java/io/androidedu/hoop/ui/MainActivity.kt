@@ -10,10 +10,16 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import io.androidedu.hoop.R
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.layout_tab.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private var container = 0
+    private val cameraFragment by lazy { camera.newInstance() }
+    private val chatsFragment by lazy { chats.newInstance() }
+    private val statusFragment by lazy { status.newInstance() }
+    private val callFragment by lazy { calls.newInstance() }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -27,7 +33,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         actionBar!!.setTitle(R.string.app_name)
 
         //when the app opened first camera tab shows
-        addFragment(container, camera.newInstance())
+        addFragment(container, cameraFragment)
 
 
         camera_tab.setOnClickListener(this)
@@ -53,10 +59,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.camera_tab -> replaceFragment(container, camera.newInstance())
-            R.id.chats_tab -> replaceFragment(container, chats.newInstance())
-            R.id.status_tab -> replaceFragment(container, status.newInstance())
-            R.id.call_tab -> replaceFragment(container, calls.newInstance())
+            R.id.camera_tab -> replaceFragment(R.id.fragment_container, cameraFragment)
+            R.id.chats_tab -> replaceFragment(R.id.fragment_container, chatsFragment)
+            R.id.status_tab -> replaceFragment(R.id.fragment_container, statusFragment)
+            R.id.call_tab -> replaceFragment(R.id.fragment_container, callFragment)
 
         }
     }

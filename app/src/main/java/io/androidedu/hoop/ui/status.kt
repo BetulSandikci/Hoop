@@ -20,6 +20,7 @@ class status : Fragment() {
     }
 
     companion object {
+
         fun newInstance() = status()
     }
 }
