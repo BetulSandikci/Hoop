@@ -9,13 +9,9 @@ import io.androidedu.hoop.R
 
 class ChatListAdapter(val chatList: ArrayList<String>) : RecyclerView.Adapter<ChatListViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatListViewHolder {
-        return ChatListViewHolder(
-            LayoutInflater.from(parent.context).inflate(
-                R.layout.adapter_item_chat_list,
-                parent,
-                false
-            )
-        )
+        val itemView =
+            ChatListViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.adapter_item_chat_list, parent))
+        return itemView
     }
 
     override fun getItemCount(): Int = chatList.size
