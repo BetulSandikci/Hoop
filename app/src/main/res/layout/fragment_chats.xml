@@ -3,13 +3,11 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              tools:context=".ui.chats">
+              tools:context=".ui.ui.chats">
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Chats Here. Coming Soon"
-            android:textSize="@dimen/button_text_size"/>
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycChatList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>

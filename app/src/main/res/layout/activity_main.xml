@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.MainActivity"
+        tools:context=".ui.ui.MainActivity"
         android:id="@+id/root">
     <androidx.appcompat.widget.Toolbar
             android:id="@+id/main_app_bar"
@@ -17,14 +17,10 @@
             app:titleTextColor="@color/colorAccent"
             app:subtitleTextColor="@color/colorAccent"
             android:padding="1dp"></androidx.appcompat.widget.Toolbar>
-    <include
-            layout="@layout/layout_tab"
-        />
-    <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-    />
+    <TableLayout android:layout_width="match_parent"
+                 android:layout_height="wrap_content"></TableLayout>
+    <androidx.viewpager.widget.ViewPager android:layout_width="match_parent"
+                                         android:layout_height="match_parent"></androidx.viewpager.widget.ViewPager>
+
 
 </LinearLayout>

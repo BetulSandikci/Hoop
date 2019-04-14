@@ -1,20 +1,15 @@
-package io.androidedu.hoop.ui
+package io.androidedu.hoop.ui.ui
 
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import io.androidedu.hoop.R
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.layout_tab.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
-    private var container = 0
     private val cameraFragment by lazy { camera.newInstance() }
     private val chatsFragment by lazy { chats.newInstance() }
     private val statusFragment by lazy { status.newInstance() }
@@ -23,7 +18,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        container = R.id.fragment_container
+
 
         // Set the toolbar as support action bar
         setSupportActionBar(main_app_bar)
@@ -33,17 +28,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         actionBar!!.setTitle(R.string.app_name)
 
         //when the app opened first camera tab shows
-        addFragment(container, cameraFragment)
+        /*addFragment(container, cameraFragment)
 
 
         camera_tab.setOnClickListener(this)
         chats_tab.setOnClickListener(this)
         status_tab.setOnClickListener(this)
-        call_tab.setOnClickListener(this)
+        call_tab.setOnClickListener(this)*/
 
 
     }
 
+/*
     inline fun FragmentManager.inTransaction(func: FragmentTransaction.() -> FragmentTransaction) {
         beginTransaction().func().commit()
     }
@@ -55,16 +51,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     fun AppCompatActivity.replaceFragment(frameId: Int, fragment: Fragment) {
         supportFragmentManager.inTransaction { replace(frameId, fragment) }
     }
+*/
 
 
     override fun onClick(v: View?) {
-        when (v?.id) {
+        /*when (v?.id) {
             R.id.camera_tab -> replaceFragment(R.id.fragment_container, cameraFragment)
             R.id.chats_tab -> replaceFragment(R.id.fragment_container, chatsFragment)
             R.id.status_tab -> replaceFragment(R.id.fragment_container, statusFragment)
             R.id.call_tab -> replaceFragment(R.id.fragment_container, callFragment)
 
-        }
+        }*/
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
