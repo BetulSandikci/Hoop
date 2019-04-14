@@ -17,10 +17,18 @@
             app:titleTextColor="@color/colorAccent"
             app:subtitleTextColor="@color/colorAccent"
             android:padding="1dp"></androidx.appcompat.widget.Toolbar>
-    <TableLayout android:layout_width="match_parent"
-                 android:layout_height="wrap_content"></TableLayout>
-    <androidx.viewpager.widget.ViewPager android:layout_width="match_parent"
-                                         android:layout_height="match_parent"></androidx.viewpager.widget.ViewPager>
+    <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tblLayoutHoopContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    </com.google.android.material.tabs.TabLayout>
+    <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vpHoopContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    </androidx.viewpager.widget.ViewPager>
 
 
 </LinearLayout>

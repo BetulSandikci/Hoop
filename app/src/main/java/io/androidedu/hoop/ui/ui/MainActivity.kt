@@ -3,17 +3,17 @@ package io.androidedu.hoop.ui.ui
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager.widget.ViewPager
+import com.google.android.material.tabs.TabLayout
 import io.androidedu.hoop.R
+import io.androidedu.hoop.ui.adapter.HoopViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity(), TabLayout.BaseOnTabSelectedListener<TabLayout.Tab>,
+    ViewPager.OnPageChangeListener {
 
-    private val cameraFragment by lazy { camera.newInstance() }
-    private val chatsFragment by lazy { chats.newInstance() }
-    private val statusFragment by lazy { status.newInstance() }
-    private val callFragment by lazy { calls.newInstance() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,8 +37,43 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         call_tab.setOnClickListener(this)*/
 
 
+        vpHoopContainer.adapter = HoopViewPagerAdapter(supportFragmentManager)
+        tblLayoutHoopContainer.setupWithViewPager(vpHoopContainer)
+        vpHoopContainer.currentItem = 1
+        tblLayoutHoopContainer.addOnTabSelectedListener(this)
+        vpHoopContainer.addOnPageChangeListener(this)
+
+
+
+
+
     }
 
+    override fun onTabReselected(p0: TabLayout.Tab?) {
+        Toast.makeText(this, "onTabReSelected", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onTabUnselected(p0: TabLayout.Tab?) {
+        Toast.makeText(this, "onTabUnSelected", Toast.LENGTH_SHORT).show()
+
+    }
+
+    override fun onTabSelected(p0: TabLayout.Tab?) {
+        Toast.makeText(this, "onTabSelected", Toast.LENGTH_SHORT).show()
+
+    }
+
+    override fun onPageScrollStateChanged(state: Int) {
+        Toast.makeText(this, "onPageScrollStateChange", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+        Toast.makeText(this, "onPageScroll", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onPageSelected(position: Int) {
+        Toast.makeText(this, "onPageSelected", Toast.LENGTH_SHORT).show()
+    }
 /*
     inline fun FragmentManager.inTransaction(func: FragmentTransaction.() -> FragmentTransaction) {
         beginTransaction().func().commit()
@@ -54,15 +89,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 */
 
 
-    override fun onClick(v: View?) {
-        /*when (v?.id) {
-            R.id.camera_tab -> replaceFragment(R.id.fragment_container, cameraFragment)
-            R.id.chats_tab -> replaceFragment(R.id.fragment_container, chatsFragment)
-            R.id.status_tab -> replaceFragment(R.id.fragment_container, statusFragment)
-            R.id.call_tab -> replaceFragment(R.id.fragment_container, callFragment)
-
-        }*/
-    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         // Inflate the menu to use in the action bar
