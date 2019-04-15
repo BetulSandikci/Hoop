@@ -4,7 +4,8 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:padding="8dp"
-              android:gravity="center_vertical">
+    android:gravity="center_vertical"
+    tools:background="@color/colorPrimary">
 
     <ImageView
             android:id="@+id/imgProfile"
@@ -15,8 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+        android:layout_marginLeft="@dimen/margin_right"
+        android:layout_marginRight="@dimen/margin_right"
             android:layout_weight="1">
 
         <TextView
@@ -31,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:text="selam, naber"
-                android:textSize="12sp"
+            android:textSize="@dimen/subText_text_size"
                 android:textColor="@android:color/darker_gray"
 
         />

@@ -27,14 +27,6 @@ class MainActivity : AppCompatActivity(), TabLayout.BaseOnTabSelectedListener<Ta
         //// Display the app icon in action bar/toolbar
         actionBar!!.setTitle(R.string.app_name)
 
-        //when the app opened first camera tab shows
-        /*addFragment(container, cameraFragment)
-
-
-        camera_tab.setOnClickListener(this)
-        chats_tab.setOnClickListener(this)
-        status_tab.setOnClickListener(this)
-        call_tab.setOnClickListener(this)*/
 
 
         vpHoopContainer.adapter = HoopViewPagerAdapter(supportFragmentManager)
