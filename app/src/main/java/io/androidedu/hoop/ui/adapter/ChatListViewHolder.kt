@@ -9,7 +9,10 @@ import io.androidedu.hoop.R
 import io.androidedu.hoop.ui.Model.ChatModel
 
 class ChatListViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder
-    (LayoutInflater.from(parent.context).inflate(R.layout.adapter_item_chat_list, parent, false)) {
+    (
+    LayoutInflater.from(parent.context)
+        .inflate(R.layout.adapter_item_chat_list, parent, false)
+) {
 
     private val imgProfile: ImageView
     private val txtUserName: TextView

@@ -66,19 +66,6 @@ class MainActivity : AppCompatActivity(), TabLayout.BaseOnTabSelectedListener<Ta
     override fun onPageSelected(position: Int) {
         Toast.makeText(this, "onPageSelected", Toast.LENGTH_SHORT).show()
     }
-/*
-    inline fun FragmentManager.inTransaction(func: FragmentTransaction.() -> FragmentTransaction) {
-        beginTransaction().func().commit()
-    }
-
-    fun AppCompatActivity.addFragment(frameId: Int, fragment: Fragment) {
-        supportFragmentManager.inTransaction { add(frameId, fragment) }
-    }
-
-    fun AppCompatActivity.replaceFragment(frameId: Int, fragment: Fragment) {
-        supportFragmentManager.inTransaction { replace(frameId, fragment) }
-    }
-*/
 
 
 
