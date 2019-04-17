@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="taps_padding">8dp</dimen>
+    <dimen name="taps_height">65dp</dimen>
+    <dimen name="button_text_size">40sp</dimen>
+    <dimen name="margin_right">16dp</dimen>
+    <dimen name="margin_left">16dp</dimen>
+    <dimen name="subText_text_size">12sp</dimen>
+
+</resources>
