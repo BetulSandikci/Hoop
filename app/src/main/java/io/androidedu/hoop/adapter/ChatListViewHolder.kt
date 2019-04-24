@@ -1,4 +1,4 @@
-package io.androidedu.hoop.ui.adapter
+package io.androidedu.hoop.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import io.androidedu.hoop.R
-import io.androidedu.hoop.ui.Model.ChatModel
+import io.androidedu.hoop.model.ChatModel
 
 class ChatListViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder
     (

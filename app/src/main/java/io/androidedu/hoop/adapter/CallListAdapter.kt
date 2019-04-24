@@ -1,8 +1,8 @@
-package io.androidedu.hoop.ui.adapter
+package io.androidedu.hoop.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import io.androidedu.hoop.ui.Model.CallsModel
+import io.androidedu.hoop.model.CallsModel
 
 class CallListAdapter(
     val callList: ArrayList<CallsModel>,

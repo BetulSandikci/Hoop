@@ -1,8 +1,8 @@
-package io.androidedu.hoop.ui.adapter
+package io.androidedu.hoop.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import io.androidedu.hoop.ui.Model.StatusModel
+import io.androidedu.hoop.model.StatusModel
 
 class StatusListAdapter(
     val statusList: ArrayList<StatusModel>,

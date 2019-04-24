@@ -1,12 +1,13 @@
-package io.androidedu.hoop.ui.adapter
+package io.androidedu.hoop.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import io.androidedu.hoop.ui.ui.calls
-import io.androidedu.hoop.ui.ui.camera
-import io.androidedu.hoop.ui.ui.chats
-import io.androidedu.hoop.ui.ui.status
+import io.androidedu.hoop.activities_ui.calls
+import io.androidedu.hoop.activities_ui.camera
+import io.androidedu.hoop.activities_ui.chats
+import io.androidedu.hoop.activities_ui.status
+
 
 
 //class extends from both , less fragment use -> FragmentPagerAdapter(can cause memory leak), multiple and dynamic fragments use -> FragmentStatePagerAdapter
@@ -29,7 +30,7 @@ class HoopViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
         fragmentList.add(callsFragment)
 
 
-        fragmentTitleList.add("Camera")
+        fragmentTitleList.add("")
         fragmentTitleList.add("Chats")
         fragmentTitleList.add("Status")
         fragmentTitleList.add("Calls")
@@ -42,5 +43,6 @@ class HoopViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
     override fun getCount(): Int = fragmentList.size
 
     override fun getPageTitle(position: Int): CharSequence? = fragmentTitleList[position]
+
 
 }

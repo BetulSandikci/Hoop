@@ -1,8 +1,8 @@
-package io.androidedu.hoop.ui.adapter
+package io.androidedu.hoop.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import io.androidedu.hoop.ui.Model.ChatModel
+import io.androidedu.hoop.model.ChatModel
 
 class ChatListAdapter(val chatList: ArrayList<ChatModel>, val onItemClickListener: (chatModel: ChatModel) -> Unit) :
     RecyclerView.Adapter<ChatListViewHolder>() {

@@ -1,4 +1,4 @@
-package io.androidedu.hoop.ui.ui
+package io.androidedu.hoop.activities_ui
 
 
 import android.os.Bundle

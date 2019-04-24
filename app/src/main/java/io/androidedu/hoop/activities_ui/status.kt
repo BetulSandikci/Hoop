@@ -1,4 +1,4 @@
-package io.androidedu.hoop.ui.ui
+package io.androidedu.hoop.activities_ui
 
 
 import android.os.Bundle
@@ -9,8 +9,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.androidedu.hoop.R
-import io.androidedu.hoop.ui.adapter.StatusListAdapter
-import io.androidedu.hoop.ui.util.GenerateDummyData
+import io.androidedu.hoop.adapter.StatusListAdapter
+import io.androidedu.hoop.util.GenerateDummyData
 import kotlinx.android.synthetic.main.fragment_status.*
 
 

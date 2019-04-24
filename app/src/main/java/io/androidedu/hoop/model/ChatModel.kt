@@ -1,4 +1,4 @@
-package io.androidedu.hoop.ui.Model
+package io.androidedu.hoop.model
 
 data class ChatModel(
     var profilePhoto: Int,

@@ -1,9 +1,9 @@
-package io.androidedu.hoop.ui.util
+package io.androidedu.hoop.util
 
 import io.androidedu.hoop.R
-import io.androidedu.hoop.ui.Model.CallsModel
-import io.androidedu.hoop.ui.Model.ChatModel
-import io.androidedu.hoop.ui.Model.StatusModel
+import io.androidedu.hoop.model.CallsModel
+import io.androidedu.hoop.model.ChatModel
+import io.androidedu.hoop.model.StatusModel
 
 object GenerateDummyData {
 

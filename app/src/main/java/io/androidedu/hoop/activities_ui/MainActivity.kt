@@ -1,4 +1,4 @@
-package io.androidedu.hoop.ui.ui
+package io.androidedu.hoop.activities_ui
 
 import android.os.Bundle
 import android.view.Menu
@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import io.androidedu.hoop.R
-import io.androidedu.hoop.ui.adapter.HoopViewPagerAdapter
+import io.androidedu.hoop.adapter.HoopViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), TabLayout.BaseOnTabSelectedListener<TabLayout.Tab>,
@@ -28,16 +28,12 @@ class MainActivity : AppCompatActivity(), TabLayout.BaseOnTabSelectedListener<Ta
         actionBar!!.setTitle(R.string.app_name)
 
 
-
         vpHoopContainer.adapter = HoopViewPagerAdapter(supportFragmentManager)
         tblLayoutHoopContainer.setupWithViewPager(vpHoopContainer)
         vpHoopContainer.currentItem = 1
+        tblLayoutHoopContainer.getTabAt(0)?.setIcon(R.drawable.ic_photo_camera_24dp)
         tblLayoutHoopContainer.addOnTabSelectedListener(this)
         vpHoopContainer.addOnPageChangeListener(this)
-
-
-
-
 
     }
 
