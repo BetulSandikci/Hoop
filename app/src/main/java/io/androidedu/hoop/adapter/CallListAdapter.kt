@@ -2,11 +2,11 @@ package io.androidedu.hoop.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import io.androidedu.hoop.model.CallsModel
+import io.androidedu.hoop.entity.CallEntity
 
 class CallListAdapter(
-    val callList: ArrayList<CallsModel>,
-    val onItemClickListener: (callModel: CallsModel) -> Unit
+    var callList: List<CallEntity>,
+    val onItemClickListener: (callEntity: CallEntity) -> Unit
 ) : RecyclerView.Adapter<CallViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CallViewHolder = CallViewHolder(parent)
 
@@ -17,4 +17,8 @@ class CallListAdapter(
         holder.bind(callList[position], onItemClickListener)
     }
 
+    fun setNewItem(callList: List<CallEntity>) {
+        this.callList = callList
+        notifyDataSetChanged()
+    }
 }

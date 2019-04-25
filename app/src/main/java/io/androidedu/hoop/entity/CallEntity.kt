@@ -3,6 +3,7 @@ package io.androidedu.hoop.entity
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Ignore
 import androidx.room.PrimaryKey
 
 
@@ -22,6 +23,11 @@ data class CallEntity(
 
     @ColumnInfo(name = "call_date")
 
-    val callDate: String
+    val callDate: String,
+
+    @Ignore
+    val callPhone: Int
+
+
 )
 

@@ -6,32 +6,26 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import io.androidedu.hoop.R
-import io.androidedu.hoop.model.StatusModel
+import io.androidedu.hoop.entity.StatusEntity
 
 class StatusListViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
     LayoutInflater.from(parent.context)
         .inflate(R.layout.adapter_item_status_list, parent, false)
 ) {
-    private val imgStatusProfile: ImageView
-    private val statusUserName: TextView
-    private val statusDate: TextView
+    private val imgStatusProfile by lazy { itemView.findViewById<ImageView>(R.id.imgStatusProfile) }
+    private val statusUserName by lazy { itemView.findViewById<TextView>(R.id.statusUserName) }
+    private val statusDate by lazy { itemView.findViewById<TextView>(R.id.statusDate) }
 
 
-    init {
-        imgStatusProfile = itemView.findViewById(R.id.imgStatusProfile)
-        statusUserName = itemView.findViewById(R.id.statusUserName)
-        statusDate = itemView.findViewById(R.id.statusDate)
-    }
+    fun bind(statusEntity: StatusEntity, onItemClickListener: (StatusEntity) -> Unit) {
 
-    fun bind(statusModel: StatusModel, onItemClickListener: (StatusModel) -> Unit) {
-
-        imgStatusProfile.setBackgroundResource(statusModel.statusProfilePhoto)
-        statusUserName.text = statusModel.statusUserName
-        statusDate.text = statusModel.statusDate
+        imgStatusProfile.setBackgroundResource(statusEntity.profilePhoto)
+        statusUserName.text = statusEntity.userName
+        statusDate.text = statusEntity.date
 
 
         itemView.setOnClickListener {
-            onItemClickListener(statusModel)
+            onItemClickListener(statusEntity)
         }
     }
 

@@ -6,7 +6,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import io.androidedu.hoop.R
-import io.androidedu.hoop.model.ChatModel
+import io.androidedu.hoop.entity.ChatEntity
 
 class ChatListViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder
     (
@@ -14,28 +14,21 @@ class ChatListViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder
         .inflate(R.layout.adapter_item_chat_list, parent, false)
 ) {
 
-    private val imgProfile: ImageView
-    private val txtUserName: TextView
-    private val txtUserMessage: TextView
-    private val txtDate: TextView
+    private val imgProfile by lazy { itemView.findViewById<ImageView>(R.id.imgCallProfile) }
+    private val txtUserName by lazy { itemView.findViewById<TextView>(R.id.txtUserName) }
+    private val txtUserMessage by lazy { itemView.findViewById<TextView>(R.id.txtUserMessage) }
+    private val txtDate by lazy { itemView.findViewById<TextView>(R.id.txtDate) }
 
 
-    init {
-        imgProfile = itemView.findViewById<ImageView>(R.id.imgProfile)
-        txtUserName = itemView.findViewById<TextView>(R.id.txtUserName)
-        txtUserMessage = itemView.findViewById<TextView>(R.id.txtUserMessage)
-        txtDate = itemView.findViewById<TextView>(R.id.txtDate)
-    }
+    fun bind(chatEntity: ChatEntity, onItemClickListener: (ChatEntity) -> Unit) {
 
-    fun bind(chatModel: ChatModel, onItemClickListener: (ChatModel) -> Unit) {
-
-        imgProfile.setBackgroundResource(chatModel.profilePhoto)
-        txtUserName.text = chatModel.userName
-        txtUserMessage.text = chatModel.userMessage
-        txtDate.text = chatModel.date
+        imgProfile.setBackgroundResource(chatEntity.profilePhoto)
+        txtUserName.text = chatEntity.userName
+        txtUserMessage.text = chatEntity.userMessage
+        txtDate.text = chatEntity.date
 
         itemView.setOnClickListener {
-            onItemClickListener(chatModel)
+            onItemClickListener(chatEntity)
         }
 
 

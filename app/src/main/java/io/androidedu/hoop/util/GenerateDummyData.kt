@@ -1,79 +1,80 @@
 package io.androidedu.hoop.util
 
 import io.androidedu.hoop.R
-import io.androidedu.hoop.model.CallsModel
-import io.androidedu.hoop.model.ChatModel
-import io.androidedu.hoop.model.StatusModel
+import io.androidedu.hoop.entity.CallEntity
+import io.androidedu.hoop.entity.ChatEntity
+import io.androidedu.hoop.entity.StatusEntity
 
 object GenerateDummyData {
 
-    fun getDummyChatList(): ArrayList<ChatModel> = ArrayList<ChatModel>().apply {
-        val chatModel = ChatModel(
-            R.drawable.ic_photo_camera_black,
-            "Betul",
-            "Öğrenci",
-            "Yesterday"
+    fun getDummyChatList(): ArrayList<ChatEntity> = ArrayList<ChatEntity>().apply {
+
+        val chatEntity = ChatEntity(
+
+            profilePhoto = R.drawable.ic_photo_camera_black,
+            userName = "Betul",
+            userMessage = "Öğrenci",
+            date = "Yesterday"
         )
 
-        add(chatModel)
-        add(chatModel)
-        add(chatModel)
-        add(chatModel)
-        add(chatModel)
-        add(chatModel)
-        add(chatModel)
-        add(chatModel)
-        add(chatModel)
-        add(chatModel)
-        add(chatModel)
-        add(chatModel)
-        add(chatModel)
-        add(chatModel)
-        add(chatModel)
-        add(chatModel)
+        add(chatEntity)
+        add(chatEntity)
+        add(chatEntity)
+        add(chatEntity)
+        add(chatEntity)
+        add(chatEntity)
+        add(chatEntity)
+        add(chatEntity)
+        add(chatEntity)
+        add(chatEntity)
+        add(chatEntity)
+        add(chatEntity)
+        add(chatEntity)
+        add(chatEntity)
 
     }
 
 
-    fun getDummyStatusList(): ArrayList<StatusModel> = ArrayList<StatusModel>().apply {
-        val statusModel = StatusModel(
-            R.drawable.ic_person_outline_black_24dp,
-            "Nuran",
-            "Today"
-        )
-        add(statusModel)
-        add(statusModel)
-        add(statusModel)
-        add(statusModel)
-        add(statusModel)
-        add(statusModel)
-        add(statusModel)
-        add(statusModel)
-        add(statusModel)
-        add(statusModel)
-        add(statusModel)
-        add(statusModel)
+    fun getDummyStatusList(): ArrayList<StatusEntity> = ArrayList<StatusEntity>().apply {
+        val statusEntity = StatusEntity(
 
+            profilePhoto = R.drawable.ic_person_outline_black_24dp,
+            userName = "Nuran",
+            date = "Today"
+        )
+        add(statusEntity)
+        add(statusEntity)
+        add(statusEntity)
+        add(statusEntity)
+        add(statusEntity)
+        add(statusEntity)
+        add(statusEntity)
+        add(statusEntity)
+        add(statusEntity)
+        add(statusEntity)
+        add(statusEntity)
+        add(statusEntity)
+        add(statusEntity)
     }
 
-    fun getDummyCallList(): ArrayList<CallsModel> = ArrayList<CallsModel>().apply {
-        val callModel = CallsModel(
-            R.drawable.ic_photo_camera_black,
-            "Firdevs",
-            "Tomorrow",
-            R.drawable.ic_local_phone_black_24dp
+    fun getDummyCallList(): ArrayList<CallEntity> = ArrayList<CallEntity>().apply {
+        val callEntity = CallEntity(
+            profile_photo = R.drawable.ic_photo_camera_black,
+            userName = "Firdevs",
+            callDate = "Tomorrow",
+            callPhone = R.drawable.ic_local_phone_black_24dp
         )
-        add(callModel)
-        add(callModel)
-        add(callModel)
-        add(callModel)
-        add(callModel)
-        add(callModel)
-        add(callModel)
-        add(callModel)
-        add(callModel)
-        add(callModel)
-        add(callModel)
+        add(callEntity)
+        add(callEntity)
+        add(callEntity)
+        add(callEntity)
+        add(callEntity)
+        add(callEntity)
+        add(callEntity)
+        add(callEntity)
+        add(callEntity)
+        add(callEntity)
+        add(callEntity)
 
 
     }
